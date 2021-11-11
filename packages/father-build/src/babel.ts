@@ -212,6 +212,7 @@ export default async function (opts: IBabelOpts) {
       join(srcPath, "**/*"),
       `!${join(srcPath, "**/fixtures{,/**}")}`,
       `!${join(srcPath, "**/demos{,/**}")}`,
+      `!${join(srcPath, "**/docs{,/**}")}`,
       `!${join(srcPath, "**/__test__{,/**}")}`,
       `!${join(srcPath, "**/__tests__{,/**}")}`,
       `!${join(srcPath, "**/*.mdx")}`,
