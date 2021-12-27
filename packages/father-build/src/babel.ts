@@ -207,10 +207,13 @@ export default async function (opts: IBabelOpts) {
       .pipe(vfs.dest(targetPath));
   }
 
-  return new Promise((resolve) => {
+  return new Promise<void>((resolve) => {
     const patterns = [
       join(srcPath, "**/*"),
       `!${join(srcPath, "**/fixtures{,/**}")}`,
+      `!${join(srcPath, "**/_test{,/**}")}`,
+      `!${join(srcPath, "**/_docs{,/**}")}`,
+      `!${join(srcPath, "**/_lang{,/**}")}`,
       `!${join(srcPath, "**/demos{,/**}")}`,
       `!${join(srcPath, "**/docs{,/**}")}`,
       `!${join(srcPath, "**/__test__{,/**}")}`,
